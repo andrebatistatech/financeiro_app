@@ -132,6 +132,36 @@ export interface TransacaoCreateDTO {
   observacoes?: string;
 }
 
+export interface TransacaoUpdateDTO {
+  categoria_id?: string;
+  cartao_id?: string;
+  descricao?: string;
+  valor_total?: number;
+  forma_pagamento?: string;
+  data_transacao?: string;
+  observacoes?: string;
+}
+
+export interface ResumoMensal {
+  mes: number;
+  ano: number;
+  total_entradas: number;
+  total_saidas: number;
+  saldo: number;
+  total_transacoes: number;
+  por_categoria: {
+    categoria_id: string;
+    categoria_nome: string;
+    total: number;
+    percentual: number;
+    }[];
+  por_forma_pagamento: {
+    forma_pagamento: string;
+    total: number;
+    percentual: number;
+    }[];
+}
+
 // ========================================
 // TIPOS DE PARCELA
 // ========================================

@@ -6,6 +6,7 @@ import { errorHandler, notFoundHandler } from './middleware/error.middleware';
 import authRoutes from './routes/auth.routes';
 import categoriasRoutes from './routes/categorias.routes';
 import cartoesRoutes from './routes/cartoes.routes';
+import transacoesRoutes from './routes/transacoes.routes';
 
 // Carregar variáveis de ambiente
 dotenv.config();
@@ -71,6 +72,9 @@ console.log('📝 Registrando rotas de cartões...');
 app.use('/api/cartoes', cartoesRoutes);
 console.log('✅ Rotas de cartões registradas!\n');
 
+console.log('📝 Registrando rotas de transações...');
+app.use('/api/transacoes', transacoesRoutes);
+console.log('✅ Rotas de transações registradas!\n');
 // ========================================
 // MIDDLEWARES DE ERRO (Sempre por último!)
 // ========================================
