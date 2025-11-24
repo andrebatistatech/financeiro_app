@@ -37,6 +37,7 @@ export interface Categoria {
   tipo: 'entrada' | 'saida';
   icone?: string;
   cor?: string;
+  ativo: boolean;
   data_criacao: string;
 }
 
@@ -45,6 +46,12 @@ export interface CategoriaCreateDTO {
   tipo: 'entrada' | 'saida';
   icone?: string;
   cor?: string;
+}
+
+export interface CategoriaUpdateDTO {
+  nome?: string;
+  cor?: string;
+  icone?: string;
 }
 
 // ========================================
@@ -72,6 +79,16 @@ export interface CartaoCreateDTO {
   tipo: 'credito' | 'debito';
   bandeira: 'visa' | 'mastercard' | 'elo' | 'amex' | 'hipercard' | 'outros';
   ultimos_4_digitos: string;
+  limite_total?: number;
+  dia_vencimento?: number;
+  dia_fechamento?: number;
+  cor?: string;
+}
+
+export interface CartaoUpdateDTO {
+  nome?: string;
+  bandeira?:  'visa' | 'mastercard' | 'elo' | 'amex' | 'hipercard' | 'outros';
+  ultimos_4_digitos?: string;
   limite_total?: number;
   dia_vencimento?: number;
   dia_fechamento?: number;

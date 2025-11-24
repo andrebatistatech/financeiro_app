@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import { testConnection } from './config/supabase';
 import { errorHandler, notFoundHandler } from './middleware/error.middleware';
 import authRoutes from './routes/auth.routes';
+import categoriasRoutes from './routes/categorias.routes';
+import cartoesRoutes from './routes/cartoes.routes';
 
 // Carregar variáveis de ambiente
 dotenv.config();
@@ -60,6 +62,14 @@ console.log('📝 Registrando rotas de autenticação...');
 console.log('   authRoutes:', typeof authRoutes);
 app.use('/api/auth', authRoutes);
 console.log('✅ Rotas de autenticação registradas!\n');
+
+console.log('📝 Registrando rotas de categorias...');
+app.use('/api/categorias', categoriasRoutes);
+console.log('✅ Rotas de categorias registradas!\n');
+
+console.log('📝 Registrando rotas de cartões...');
+app.use('/api/cartoes', cartoesRoutes);
+console.log('✅ Rotas de cartões registradas!\n');
 
 // ========================================
 // MIDDLEWARES DE ERRO (Sempre por último!)
